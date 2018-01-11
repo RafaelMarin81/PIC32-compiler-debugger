@@ -50,7 +50,15 @@ $ 7z x microchip_compilador.7z
 
 $ sudo mv microchip /opt/
 
-$ sudo ./MPLABX-v4.05-linux-installer.sh
+To install the IPE tool to program and debug:
+
+$ wget http://ww1.microchip.com/downloads/en/DeviceDoc/MPLABX-v3.35-linux-installer.tar
+
+$ tar xvf MPLABX-v3.35-linux-installer.tar
+
+$ sudo ./MPLABX-v3.35-linux-installer.sh
+
+IMPORTANT: If you use MPLABX with newer version v4.xx.  You can have problems with IPE to program using commands-line and IPE-interface. Release from RESET. 
 
 Include the compiler in ~/.bashrc
 =================================
@@ -118,15 +126,15 @@ $ /opt/microchip/mplabx/v4.05/mplab_ipe/mplab_ipe
 
 To program with commands line using the Pickit-3 kit.
 
-$ java -jar /opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.jar -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPPK3 -Y
+$ java -jar /opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.jar -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPPK3 -Y -m
 
 To program with commands line using the ICD-3 kit.
 
-$ java -jar /opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.jar -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPICD3 -Y     
+$ java -jar /opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.jar -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPICD3 -Y -m   
 
 To program with commands line using general-configuration.
 
-$ ${IPECMD} -f${target}.hex -P${MICROCHIP_MCU_MODEL} -TP$(KIT) -Y
+$ ${IPECMD} -f${target}.hex -P${MICROCHIP_MCU_MODEL} -TP$(KIT) -Y -m
 
 How to debug
 ============
