@@ -1,0 +1,18 @@
+
+To use with general-format
+
+COMMAND ${IPECMD} -f${target}.hex -P${MICROCHIP_MCU_MODEL} -TPICD3 -Y
+
+To use with ICD-3
+
+java -jar /opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.jar -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPICD3 -Y
+
+/opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.sh -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPICD3 -Y
+
+
+To use with Pickit-3
+
+java -jar /opt/microchip/mplabx/v4.05/mplab_ipe/ipecmd.jar -fRexlab_ecc_acelerated.hex -P32MX795F512L  -TPPK3 -Y
+
+
+
